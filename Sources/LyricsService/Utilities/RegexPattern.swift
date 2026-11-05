@@ -20,20 +20,20 @@ func resolveTimeTag(_ str: String) -> [TimeInterval] {
     }
 }
 
-let id3TagRegex = Regex(#"^(?!\[[+-]?\d+:\d+(?:\.\d+)?\])\[(.+?):(.+)\]$"#, options: .anchorsMatchLines)
+let id3TagRegex = Regex(#"^(?!\[[+-]?\d+:\d+(?:\.\d+)?\])\[(.+?):(.+)\]$"# as StaticString, options: .anchorsMatchLines)
 
-let krcLineRegex = Regex(#"^\[(\d+),(\d+)\](.*)"#, options: .anchorsMatchLines)
+let krcLineRegex = Regex(#"^\[(\d+),(\d+)\](.*)"# as StaticString, options: .anchorsMatchLines)
 
 let netEaseInlineTagRegex = Regex(#"\(0,(\d+)\)([^(]+)(\(0,1\) )?"#)
 
 let kugouInlineTagRegex = Regex(#"<(\d+),(\d+),0>([^<]*)"#)
 
 let ttpodXtrcLineRegex = Regex(
-    #"^((?:\[[+-]?\d+:\d+(?:\.\d+)?\])+)(?:((?:<\d+>[^<\r\n]+)+)|(.*))$(?:[\r\n]+\[x\-trans\](.*))?"#,
+    #"^((?:\[[+-]?\d+:\d+(?:\.\d+)?\])+)(?:((?:<\d+>[^<\r\n]+)+)|(.*))$(?:[\r\n]+\[x\-trans\](.*))?"# as StaticString,
     options: .anchorsMatchLines)
 
 let ttpodXtrcInlineTagRegex = Regex(#"<(\d+)>([^<\r\n]*)"#)
 
 let syairSearchResultRegex = Regex(#"<div class="title"><a href="([^"]+)">"#)
 
-let syairLyricsContentRegex = Regex(#"<div class="entry">(.+?)<div"#, options: .dotMatchesLineSeparators)
+let syairLyricsContentRegex = Regex(#"<div class="entry">(.+?)<div"# as StaticString, options: .dotMatchesLineSeparators)
